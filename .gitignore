@@ -1,0 +1,23 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Flask instance folder
+instance/
+
+# Virtual environment folder
+venv/
+.venv/
+
+# Flask .env file for sensitive credentials
+.env
+
+# IDE and editor specific files
+.idea/
+.vscode/
+
+# OS specific files
+.DS_Store
+todo.db

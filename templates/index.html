@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Home | TaskMaster{% endblock %}
+
+{% block content %}
+<!-- Task List Section -->
+<section class="container mt-5">
+    <h2 class="text-center mb-4">Your Tasks</h2>
+    <div class="row">
+        {% for task in tasks %}
+        <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card task-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ task.title }}</h5>
+                    <p class="card-text">{{ task.description }}</p>
+                    <p class="card-text"><strong>Due Date:</strong> {{ task.due_date }}</p>
+                    <p class="card-text"><strong>Priority:</strong> {{ task.priority }}</p>
+                    <p class="card-text"><strong>Category:</strong> {{ task.category }}</p>
+                    <div class="d-flex justify-content-between">
+                        <a href="/edit/{{ task.id }}" class="btn btn-warning">Edit</a>
+                        <a href="/delete/{{ task.id }}" class="btn btn-danger">Delete</a>
+                        <a href="/complete/{{ task.id }}" class="btn btn-success">Complete</a> <!-- Mark task as complete -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
